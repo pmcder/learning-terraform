@@ -1,8 +1,3 @@
-variable "instance_names" {
-  type = list(string)
-  default = ["Worker 1","Worker 2","Worker 3"]
-}
-
 data "aws_ami" "app_ami" {
   most_recent = true
 
@@ -30,7 +25,7 @@ data "aws_subnet" "enablement-sub1-private" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.app_ami.id
   count = length(var.instance_names)
-  instance_type = "t3.nano"
+  instance_type = var.instance_types["test"]
   subnet_id = data.aws_subnet.enablement-sub1-private.id
 
   tags = {
