@@ -25,7 +25,7 @@ data "aws_subnet" "enablement-sub1-private" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.app_ami.id
   count = length(var.instance_names)
-  instance_type = var.instance_types["test"]
+  instance_type = var.instance_types["worker"]
   subnet_id = data.aws_subnet.enablement-sub1-private.id
 
   tags = {

@@ -6,10 +6,9 @@
 variable "instance_types" {
   type = map(string)
   default = {
-    "bootstrap"  = "i3.large"
-    "worker"  = "t3a.xlarge"
-    "master"   = "t3a.xlarge"
-    "test" = "t3.nano"
+    "bootstrap"  = "t3.nano"
+    "worker"  = "t3.nano"
+    "master"   = "t3.nano"
   }
 }
 
