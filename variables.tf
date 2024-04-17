@@ -16,3 +16,12 @@ variable "instance_names" {
   type = list(string)
   default = ["Worker 1","Worker 2","Worker 3"]
 }
+
+variable "user_data_scripts" {
+  type = map(string)
+  default = {
+    "bootstrap" = "#!/bin/bash\n# bootstrap..."
+    "worker" = "#!/bin/bash\n# worker..."
+    "master"  = "#!/bin/bash\n# master..."
+  }
+}
