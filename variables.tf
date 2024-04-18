@@ -7,21 +7,26 @@ variable "instance_types" {
   type = map(string)
   default = {
     "bootstrap"  = "t3.nano"
-    "worker"  = "t3.nano"
-    "master"   = "t3.nano"
+    "worker"     = "t3.nano"
+    "master"     = "t3.nano"
   }
 }
 
 variable "instance_names" {
-  type = list(string)
+  type    = list(string)
   default = ["Worker 1","Worker 2","Worker 3"]
 }
 
+variable "master_instance_names" {
+  type    = list(string)
+  default = ["Master 1","Master 2","Master 3"]
+}
+
 variable "user_data_scripts" {
-  type = map(string)
+  type    = map(string)
   default = {
     "bootstrap" = "#!/bin/bash\n# bootstrap..."
-    "worker" = "#!/bin/bash\n# worker..."
-    "master"  = "#!/bin/bash\n# master..."
+    "worker"    = "#!/bin/bash\n# worker..."
+    "master"    = "#!/bin/bash\n# master..."
   }
 }
