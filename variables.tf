@@ -14,7 +14,7 @@ variable "instance_types" {
 
 variable "instance_names" {
   type    = list(string)
-  default = ["Worker A","Worker B","Worker C"]
+  default = ["Worker 1","Worker 2","Worker 3"]
 }
 
 variable "master_instance_names" {
